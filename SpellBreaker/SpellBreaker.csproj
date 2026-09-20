@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\SpellBreaker.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>SpellBreaker</AssemblyName>
+    <RootNamespace>SpellBreaker</RootNamespace>
+    <Version>1.0.0</Version>
+    <AssemblyTitle>SpellBreaker</AssemblyTitle>
+    <Description>SpellBreaker</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\SpellBreaker.ico" />
+    <EmbeddedResource Include="Resources\payload_104.js" />
+    <EmbeddedResource Include="Resources\payload_107.js" />
+    <EmbeddedResource Include="Resources\modified1.mp3" />
+    <EmbeddedResource Include="Resources\modified2.mp3" />
+    <EmbeddedResource Include="Resources\modified3.mp3" />
+    <EmbeddedResource Include="Resources\failed1.mp3" />
+    <EmbeddedResource Include="Resources\failed2.mp3" />
+    <EmbeddedResource Include="Resources\failed3.mp3" />
+    <EmbeddedResource Include="lang\*.ini" />
+  </ItemGroup>
+
+</Project>

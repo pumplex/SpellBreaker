@@ -1,0 +1,83 @@
+<UserControl x:Class="SpellBreaker.SelectorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Border Background="{DynamicResource BodyBg}" Margin="10" Padding="6">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <!-- TARGET VERSION -->
+                    <GroupBox>
+                        <GroupBox.Header>
+                            <TextBlock x:Name="VerHeader" FontWeight="Bold" Foreground="{DynamicResource Legend}"/>
+                        </GroupBox.Header>
+                        <StackPanel x:Name="VersionList"/>
+                    </GroupBox>
+
+                    <!-- PRO -->
+                    <GroupBox>
+                        <GroupBox.Header>
+                            <TextBlock x:Name="ProHeader" FontWeight="Bold" Foreground="{DynamicResource Legend}"/>
+                        </GroupBox.Header>
+                        <StackPanel>
+                            <TextBlock x:Name="ProQuestion" FontStyle="Italic"/>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox x:Name="ProCheck" Checked="OptionToggled" Unchecked="OptionToggled"/>
+                                <TextBlock x:Name="ProCheckLabel" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <TextBlock x:Name="MethodLabel" FontStyle="Italic" Margin="0,6,0,0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,4">
+                                <ComboBox x:Name="MethodCombo" SelectionChanged="MethodChanged">
+                                    <ComboBoxItem x:Name="SakItem" Tag="Sak"/>
+                                    <ComboBoxItem Content="Adaptive" Tag="Adaptive"/>
+                                </ComboBox>
+                                <StackPanel x:Name="SakVersionPanel" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+                                    <RadioButton x:Name="Sak104" Content="v1.0.4" GroupName="sakver"/>
+                                    <RadioButton x:Name="Sak107" Content="v1.0.7" GroupName="sakver"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,4">
+                                <TextBox x:Name="UsernameBox" Width="150"/>
+                                <CheckBox x:Name="UsernameCheck" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!-- AUTO-UPDATE -->
+                    <GroupBox>
+                        <GroupBox.Header>
+                            <TextBlock x:Name="UpdHeader" FontWeight="Bold" Foreground="{DynamicResource Legend}"/>
+                        </GroupBox.Header>
+                        <StackPanel>
+                            <TextBlock x:Name="UpdQuestion" FontStyle="Italic"/>
+                            <CheckBox x:Name="UpdCheck" Checked="OptionToggled" Unchecked="OptionToggled"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!-- DEVTOOLS -->
+                    <GroupBox>
+                        <GroupBox.Header>
+                            <TextBlock x:Name="DevHeader" FontWeight="Bold" Foreground="{DynamicResource Legend}"/>
+                        </GroupBox.Header>
+                        <StackPanel>
+                            <TextBlock x:Name="DevQuestion" FontStyle="Italic"/>
+                            <CheckBox x:Name="DevCheck" Checked="OptionToggled" Unchecked="OptionToggled"/>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- BACK / MODIFY -->
+            <Grid Grid.Row="1" Margin="0,6,0,0">
+                <Button x:Name="BackButton" Style="{StaticResource ThemedButton}"
+                        HorizontalAlignment="Left" MinWidth="100" Click="BackClicked"/>
+                <Button x:Name="ModifyButton" Style="{StaticResource GreenButton}"
+                        HorizontalAlignment="Right" MinWidth="110" Click="ModifyClicked"/>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

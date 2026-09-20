@@ -1,0 +1,17 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+publish/
+publish-staged/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Runtime artifacts (contain local paths/settings)
+Options.ini
+SpellBreaker.log
+
+# Dev-only harness (not published)
+harness/

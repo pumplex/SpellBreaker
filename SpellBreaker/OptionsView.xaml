@@ -1,0 +1,98 @@
+<UserControl x:Class="SpellBreaker.OptionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Border Background="{DynamicResource BodyBg}" Margin="10" Padding="6">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <!-- LANGUAGE -->
+                    <GroupBox>
+                        <GroupBox.Header><TextBlock x:Name="LangHeader" FontWeight="Bold" Foreground="{DynamicResource Legend}"/></GroupBox.Header>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock x:Name="LangDesc" FontStyle="Italic"/>
+                                <TextBlock x:Name="LangFile" FontWeight="Bold" Margin="6,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,4">
+                                <TextBlock x:Name="ForceLangLabel" VerticalAlignment="Center"/>
+                                <ComboBox x:Name="LangCombo" SelectionChanged="LangComboChanged"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!-- SOUNDS -->
+                    <GroupBox>
+                        <GroupBox.Header><TextBlock x:Name="SoundsHeader" FontWeight="Bold" Foreground="{DynamicResource Legend}"/></GroupBox.Header>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock x:Name="SoundsDesc" FontStyle="Italic"/>
+                                <TextBlock x:Name="SoundsState" FontWeight="Bold" Margin="6,0,0,0"/>
+                            </StackPanel>
+                            <CheckBox x:Name="SoundsCheck" Checked="SoundsToggled" Unchecked="SoundsToggled" Margin="0,4"/>
+                            <StackPanel x:Name="SoundsPanel">
+                                <StackPanel Orientation="Horizontal" Margin="0,2">
+                                    <TextBlock x:Name="SuccessLabel" VerticalAlignment="Center" MinWidth="70"/>
+                                    <Button Style="{StaticResource ThemedButton}" Tag="Success"
+                                            Padding="5,2" Margin="0,0,6,0" VerticalAlignment="Center"
+                                            Click="PlaySoundPreview">
+                                        <Path Data="{StaticResource SpeakerIcon}" Fill="{DynamicResource Accent}"
+                                              Width="14" Height="14" Stretch="Uniform"/>
+                                    </Button>
+                                    <ComboBox x:Name="SuccessCombo" SelectionChanged="SoundComboChanged"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,2">
+                                    <TextBlock x:Name="FailureLabel" VerticalAlignment="Center" MinWidth="70"/>
+                                    <Button Style="{StaticResource ThemedButton}" Tag="Failure"
+                                            Padding="5,2" Margin="0,0,6,0" VerticalAlignment="Center"
+                                            Click="PlaySoundPreview">
+                                        <Path Data="{StaticResource SpeakerIcon}" Fill="{DynamicResource Accent}"
+                                              Width="14" Height="14" Stretch="Uniform"/>
+                                    </Button>
+                                    <ComboBox x:Name="FailureCombo" SelectionChanged="SoundComboChanged"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!-- MODIFICATIONS -->
+                    <GroupBox>
+                        <GroupBox.Header><TextBlock x:Name="ModHeader" FontWeight="Bold" Foreground="{DynamicResource Legend}"/></GroupBox.Header>
+                        <StackPanel>
+                            <CheckBox x:Name="PromosCheck"/>
+                            <CheckBox x:Name="OverlayCheck"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!-- OTHERS -->
+                    <GroupBox>
+                        <GroupBox.Header><TextBlock x:Name="OthersHeader" FontWeight="Bold" Foreground="{DynamicResource Legend}"/></GroupBox.Header>
+                        <StackPanel>
+                            <CheckBox x:Name="ShortcutCheck" Margin="0,4"/>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- THEME + BACK/SAVE/CANCEL -->
+            <Grid Grid.Row="1" Margin="6,10,6,6">
+                <ComboBox x:Name="ThemeCombo" VerticalAlignment="Center" HorizontalAlignment="Left"
+                          SelectionChanged="ThemeChanged">
+                    <ComboBoxItem Content="AUTO" Tag="AUTO"/>
+                    <ComboBoxItem x:Name="ThemeLight" Tag="LIGHT"/>
+                    <ComboBoxItem x:Name="ThemeDark" Tag="DARK"/>
+                </ComboBox>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="SaveButton" Style="{StaticResource GreenButton}"
+                            MinWidth="90" Click="SaveClicked"/>
+                    <Button x:Name="CancelButton" Style="{StaticResource RedButton}"
+                            MinWidth="90" Click="CancelClicked"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
