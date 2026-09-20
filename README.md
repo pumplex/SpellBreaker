@@ -1,9 +1,7 @@
 # 🪄Spell Breaker
 <p align="center">
-	<a href="https://i.postimg.cc/J4nmhJ5z/Spell-Breaker-Main.png"><img width="400" src="https://i.postimg.cc/J4nmhJ5z/Spell-Breaker-Main.png" alt="Spell-Breaker-Main"></a>
-	<a href="https://i.postimg.cc/qMR07nxg/Spell-Breaker-Options.png"><img width="400" src="https://i.postimg.cc/qMR07nxg/Spell-Breaker-Options.png" alt="Spell-Breaker-Options"></a>
-	<a href="https://i.postimg.cc/VL61NMWd/Spell-Breaker-Modify.png"><img width="400" src="https://i.postimg.cc/VL61NMWd/Spell-Breaker-Modify.png" alt="Spell-Breaker-Modify"></a>
-	<a href="https://i.postimg.cc/KvzFYLD1/Spell-Breaker-Modified.png"><img width="400" src="https://i.postimg.cc/KvzFYLD1/Spell-Breaker-Modified.png" alt="Spell-Breaker-Modified"></a>
+	<a href="https://i.postimg.cc/J4nmhJ5z/Spell-Breaker-Main.png"><img width="400" src="https://i.postimg.cc/J4nmhJ5z/Spell-Breaker-Main.png" alt="Spell-Breaker-Main"></a><a href="https://i.postimg.cc/qMR07nxg/Spell-Breaker-Options.png"><img width="400" src="https://i.postimg.cc/qMR07nxg/Spell-Breaker-Options.png" alt="Spell-Breaker-Options"></a>
+	<a href="https://i.postimg.cc/VL61NMWd/Spell-Breaker-Modify.png"><img width="400" src="https://i.postimg.cc/VL61NMWd/Spell-Breaker-Modify.png" alt="Spell-Breaker-Modify"></a><a href="https://i.postimg.cc/KvzFYLD1/Spell-Breaker-Modified.png"><img width="400" src="https://i.postimg.cc/KvzFYLD1/Spell-Breaker-Modified.png" alt="Spell-Breaker-Modified"></a>
 	<a href="https://i.postimg.cc/c4HZJYBC/Spell-Breaker-Restored.png"><img width="400" src="https://i.postimg.cc/c4HZJYBC/Spell-Breaker-Restored.png" alt="Spell-Breaker-Restored"></a>
 </p>
 
@@ -35,7 +33,7 @@ a locally installed, Electron-based application.
 		&nbsp;<i title="Русский">🇷🇺</i>
 		&nbsp;<i title="Türkçe">🇹🇷</i>
 		&nbsp;<i title="中文（简体）">🇨🇳</i>
-	<br><br>
+	<br>
 - **Version list** — enumerates every installed application version (newest first),
   asynchronously scans each one, and displays its per-version modification status as
   colored tags with a Restore action.
